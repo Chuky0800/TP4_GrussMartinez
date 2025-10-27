@@ -1,6 +1,7 @@
 # TP4_GrussMartinez
 ## Informática Médica
 <img width="320" height="157" alt="download" src="https://github.com/user-attachments/assets/fb6645c1-1a1b-4fe0-bfec-efe8b1d9cab2" />
+
 Trabajo Práctico N°4: Base de Datos, SQL y Manejo de Versiones
 
 ## Profesores
