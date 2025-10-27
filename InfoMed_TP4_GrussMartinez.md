@@ -1,10 +1,10 @@
-# Trabajo Práctico N°5
+# Trabajo Práctico N°4
 ![image](https://github.com/user-attachments/assets/f2e54dc0-6027-4cd7-817a-a42e47570113)
 
 ## _Autores:_ 
 * Santiago Gruss
 * Juan Agustín Martínez Haart
-* 
+
 ## **PARTE 1:** Bases de Datos
 
 ### 1. ¿Qué tipo de base de datos es? 
@@ -18,10 +18,10 @@ Según su función o uso: Es una base de datos transaccional u operacional (OLTP
 Según su finalidad: Consideramos agregar esta clasificación porque nos parecía distintiva de la base de datos que estamos analizando, por lo tanto, según su finalidad es una base de datos administrativa / sanitaria enfocada en la gestión clínica y médica.
 
 ### 2. Armar el diagrama entidad-relación de la base de datos dada. 
-<img src="imágenes/helisulbaranBD02.png" alt="ejemplo_modelo-ER" style="width:500px;"/>
+<img src="imagenes/diagrama_entidad_relacion.png" alt="ejemplo_modelo-ER" style="width:500px;"/>
 
 ### 3. Armar el Modelo relacional de la base de datos dada.
-![modelo_relacional](imágenes/modelo_relacional.png)
+![modelo_relacional](imagenes/modelo_relacional.png)
 
 ### 4. Considera que la base de datos está normalizada. En caso que no lo esté, ¿cómo podría hacerlo?
 
