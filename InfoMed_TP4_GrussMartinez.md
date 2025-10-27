@@ -31,6 +31,7 @@ De forma análoga, un Médico puede emitir muchas recetas, pero cada receta est�
 Cada Receta puede contener la prescripción de un medicamento o tratamiento específico. En este modelo se ha simplificado asumiendo que cada receta incluye un solo medicamento principal, por lo cual la relación es de muchos a uno (N:1) desde Receta hacia Medicamento. Esta decisión de diseño busca mantener la estructura del modelo simple y centrada en la trazabilidad de prescripciones, sin necesidad de incorporar una entidad intermedia que detalle múltiples medicamentos por receta (como “Detalle_Receta”), la cual fue descartada deliberadamente.
 
 Cada Receta se asocia a una única enfermedad o diagnóstico que motiva la prescripción, mientras que una enfermedad puede estar vinculada a múltiples recetas emitidas en diferentes pacientes o momentos. Por tanto, la relación es uno a muchos (1:N) desde Enfermedad hacia Receta. Esta relación permite realizar análisis epidemiológicos, ya que posibilita relacionar las enfermedades más frecuentes con los medicamentos recetados o las especialidades médicas que las tratan.
+
 Finalmente, la entidad Receta fue definida como entidad débil, ya que no tiene existencia independiente: depende tanto del Paciente como del Médico. Su clave primaria está compuesta por la combinación de las claves foráneas (IDPaciente, IDMedico, IDEnfermedad, IDMedicamento) junto con la Fecha de emisión, lo que garantiza la unicidad de cada registro sin necesidad de introducir un identificador nuevo.
 
 
@@ -42,7 +43,7 @@ Sin embargo, todavía no podemos afirmar con certeza que está completamente nor
 
 Para normalizarla, tendríamos que ir analizando cada Forma Normal, de la primera a la tercera. Para la 1FN, se cumple la condición de que celda de la tabla tiene un único valor. Para la 2FN, acá podríamos tener algún problema ya que puede que hayan dependencias parciales de los atributos a sus claves primarias.
 
-Por último para que se cumpla 3FN, se deben cumplir las anteriores condiciones. Deberíamos repasar una por una las tablas para lograr esta Tercer Forma Normal, donde cada columna que no sea clave debe ser independiente de las demás columnas.
+Por último para que se cumpla 3FN, se deben cumplir las anteriores condiciones. Deberíamos repasar una por una las tablas para lograr esta Tercer Forma Normal, donde cada columna que no sea clave debe ser independiente de las demás columnas. En primer lugar, se podŕıa dividir el nombre del paciente en nombre y apellido, el del médico tambien y la direccion en calle, altura y CP. Más allá de estos cambios, la tabla cumple con las condiciones: los datos no son redundantes, las claves Fk relacionan información sin duplicarla y cada atributo depende de su clave primaria Pk.
 
 ## **PARTE 2:** Bases de Datos
 
