@@ -1,5 +1,10 @@
 # TP4_GrussMartinez
 ## Informática Médica
+## Profesores
+- Eugenia Camila Berrino
+- Carlos Lazzarino
+- Melina Leonor Piacentino Castaño
+- Ingrid Celia Spessotti
 ## Alumnos
 - Santiago Gruss
 - Agustin Martinez Haarth
