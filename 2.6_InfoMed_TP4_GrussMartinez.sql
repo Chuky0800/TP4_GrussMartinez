@@ -1,0 +1,1 @@
+SELECT nombre, calle || ' ' || numero AS Dirección FROM pacientes WHERE ciudad = 'Buenos Aires';
