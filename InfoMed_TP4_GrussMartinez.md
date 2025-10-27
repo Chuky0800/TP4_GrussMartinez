@@ -1,5 +1,4 @@
 # Trabajo Práctico N°4
-![image](https://github.com/user-attachments/assets/f2e54dc0-6027-4cd7-817a-a42e47570113)
 
 ## _Autores:_ 
 * Santiago Gruss
