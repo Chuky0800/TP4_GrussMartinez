@@ -22,17 +22,19 @@ Según su finalidad: Consideramos agregar esta clasificación porque nos parecí
 ### 3. Armar el Modelo relacional de la base de datos dada.
 ![modelo_relacional](imagenes/modelo_relacional.png)
 
+#### Justificación de Diagrama de Chen y la notación de Crow’s Foot
+
 El modelo relacional que hemos planteado se definió previamente a través del Diagrama de Chen y con eso pudimos desarrollar la notación de Crow’s Foot. Con este último diseño buscamos reflejar la realidad operativa del “centro médico”, esperando integrar bien las referencias y la normalización de los datos.
 
 La relación entre Paciente y Receta es de uno a muchos (1:N), ya que un paciente puede tener registradas múltiples recetas a lo largo del tiempo, pero cada receta pertenece a un solo paciente. Esta relación permite el seguimiento histórico de las prescripciones de un mismo individuo, asegurando que la trazabilidad se mantenga a lo largo del tiempo. Además, se establece que la Receta depende de la existencia de un paciente, por lo que se justifica que sea una entidad débil, cuya clave primaria incluye la clave del paciente.
 
 De forma análoga, un Médico puede emitir muchas recetas, pero cada receta está asociada a un único médico que la emite. Por lo tanto, se establece una relación uno a muchos (1:N) desde Médico hacia Receta. Esta relación permite analizar la actividad médica por especialidad o por profesional, así como realizar auditorías de las prescripciones emitidas.
+
 Cada Receta puede contener la prescripción de un medicamento o tratamiento específico. En este modelo se ha simplificado asumiendo que cada receta incluye un solo medicamento principal, por lo cual la relación es de muchos a uno (N:1) desde Receta hacia Medicamento. Esta decisión de diseño busca mantener la estructura del modelo simple y centrada en la trazabilidad de prescripciones, sin necesidad de incorporar una entidad intermedia que detalle múltiples medicamentos por receta (como “Detalle_Receta”), la cual fue descartada deliberadamente.
 
 Cada Receta se asocia a una única enfermedad o diagnóstico que motiva la prescripción, mientras que una enfermedad puede estar vinculada a múltiples recetas emitidas en diferentes pacientes o momentos. Por tanto, la relación es uno a muchos (1:N) desde Enfermedad hacia Receta. Esta relación permite realizar análisis epidemiológicos, ya que posibilita relacionar las enfermedades más frecuentes con los medicamentos recetados o las especialidades médicas que las tratan.
 
 Finalmente, la entidad Receta fue definida como entidad débil, ya que no tiene existencia independiente: depende tanto del Paciente como del Médico. Su clave primaria está compuesta por la combinación de las claves foráneas (IDPaciente, IDMedico, IDEnfermedad, IDMedicamento) junto con la Fecha de emisión, lo que garantiza la unicidad de cada registro sin necesidad de introducir un identificador nuevo.
-
 
 ### 4. Considera que la base de datos está normalizada. En caso que no lo esté, ¿cómo podría hacerlo?
 
